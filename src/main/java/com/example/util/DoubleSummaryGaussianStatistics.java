@@ -6,8 +6,6 @@ import java.util.DoubleSummaryStatistics;
  * @author Binnur Kurt <binnur.kurt@gmail.com>
  */
 public class DoubleSummaryGaussianStatistics extends DoubleSummaryStatistics {
-    private double variance;
-    private double stdVariance;
     private double Mk;
     private double Qk;
 
@@ -30,13 +28,11 @@ public class DoubleSummaryGaussianStatistics extends DoubleSummaryStatistics {
     }
 
     public double getVariance() {
-        variance= Qk / (getCount() - 1);
-        return variance;
+        return Qk / (getCount() - 1);
     }
 
     public double getStdVariance() {
-        stdVariance= Math.sqrt (Qk/getCount());
-        return stdVariance;
+        return Math.sqrt(Qk / getCount());
     }
 
     @Override
